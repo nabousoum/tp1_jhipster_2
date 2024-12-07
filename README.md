@@ -47,5 +47,5 @@ Avec Postman :
    http://localhost:9090/services/ms2/api/v1/hello
    ```
 ----------------
-Contributeurs
+Contributeur
 - Auteur : Seynabou SOUMARE
