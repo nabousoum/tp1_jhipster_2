@@ -2,10 +2,9 @@ package com.groupeisi.ms2.web.rest.controllers;
 
 import com.groupeisi.ms2.domain.Etudiant;
 import com.groupeisi.ms2.service.IEtudiantService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +22,9 @@ public class EtudiantController {
     @GetMapping("/etudiants")
     public ResponseEntity<List<Etudiant>> getAllEtudiants() {
         return ResponseEntity.ok(etudiantService.getAllEtudiants());
+    }
+    @PostMapping("/etudiant")
+    public ResponseEntity<Etudiant> createEtudiant(@RequestBody Etudiant etudiant) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(etudiantService.createEtudiant(etudiant));
     }
 }

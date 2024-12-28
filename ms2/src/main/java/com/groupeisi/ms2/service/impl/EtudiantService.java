@@ -9,10 +9,10 @@ import java.util.List;
 
 @Service
 public class EtudiantService implements IEtudiantService {
+    private final List<Etudiant> lesEtudiants = new ArrayList<>();
 
     @Override
     public List<Etudiant> getAllEtudiants() {
-        List<Etudiant> lesEtudiants = new ArrayList<>();
 
         Etudiant et1 = new Etudiant();
         et1.setIdEtudiant(1L);
@@ -27,5 +27,13 @@ public class EtudiantService implements IEtudiantService {
         lesEtudiants.add(et2);
 
         return lesEtudiants;
+    }
+
+    @Override
+    public Etudiant createEtudiant(Etudiant etudiant) {
+        Etudiant etudiant1 = new Etudiant();
+        etudiant1.setIdEtudiant(1L);
+        lesEtudiants.add(etudiant1);
+        return etudiant1;
     }
 }

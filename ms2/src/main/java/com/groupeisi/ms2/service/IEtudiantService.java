@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IEtudiantService {
     public List<Etudiant> getAllEtudiants();
+    public Etudiant createEtudiant(Etudiant etudiant);
 }
